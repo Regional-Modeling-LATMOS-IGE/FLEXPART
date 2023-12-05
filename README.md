@@ -20,6 +20,9 @@
 # Prepare the meteorological data for running FLEXPART
 ## THIS NEEDS TO BE UPDATED WHEN FLEX_EXTRACT WORKS
 
+1. Get the flex_extract source code
+
+
 1. Create a dedicated folder in your /data/ directory
 2. 
 
