@@ -18,7 +18,7 @@
 
 
 # Prepare the meteorological data for running FLEXPART
-# THIS NEEDS TO BE UPDATED WHEN FLEX_EXTRACT WORKS
+## THIS NEEDS TO BE UPDATED WHEN FLEX_EXTRACT WORKS
 
 1. Create a dedicated folder in your /data/ directory
 2. 
