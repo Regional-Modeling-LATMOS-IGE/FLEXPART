@@ -22,9 +22,13 @@
 
 1. Get the flex_extract source code
 
+```bash
+git clone --single-branch --branch master https://www.flexpart.eu/gitmob/flex_extract
+```
 
-1. Create a dedicated folder in your /data/ directory
-2. 
+2. Create a dedicated folder in your /data/ directory
+
+3. Make it work...
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
