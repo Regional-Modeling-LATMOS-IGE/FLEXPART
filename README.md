@@ -33,7 +33,7 @@
 
 ### Setup the run
 1. Generate the AVAILABLE FILE
-Example command: python mkAVAIL_v8.py -s 2017010100 -e 2017123121 -m EI -p /data/lapere/FLEXPART/input/
+python mkAVAIL_v8.py -s 2017010100 -e 2017123121 -m EI -p /data/lapere/FLEXPART/input/
 where -s is the start date of the files you need, -e is the end date, -m is the meteorological input files prefix, -p is the path where these files are located
 2 . Edit the pathnames file:
    - 1st line should be ./options/
