@@ -11,7 +11,7 @@
 
    - Untar and patch the sources. In particular, it patches the FLEXPART
      makefile to make it usable on the [spirit
-     supercalculator](https://mesocentre.ipsl.fr/).
+     cluster](https://mesocentre.ipsl.fr/).
 
 3. Run the command `make flexpart-serial`. This will compile FLEXPART in serial
    mode. The resulting binary is `flexpart_v10.4/src/FLEXPART`.
