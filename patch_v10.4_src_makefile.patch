@@ -1,0 +1,53 @@
+9,14d8
+< #    At NILU we have installed gcc-4.9.1 and libraries under user /homevip/flexpart
+< #    ("ROOT_DIR")
+< #    To use gfortran version 4.9, add "gcc=4.9" to the make command, e.g.
+< #       'make -j ecmwf gcc=4.9',
+< #    also set environment variable LD_LIBRARY_PATH to point to compiler libraries
+< #
+53,73c47,51
+< ifeq ($(gcc), 4.9)
+< # Compiled libraries under user ~flexpart, gfortran v4.9
+< 	ROOT_DIR = /homevip/flexpart/
+< 
+< 	F90	  = ${ROOT_DIR}/gcc-4.9.1/bin/gfortran
+< 	MPIF90    = ${ROOT_DIR}/bin/mpifort
+< 
+< 	INCPATH1  = ${ROOT_DIR}/gcc-4.9.1/include	
+< 	INCPATH2  = ${ROOT_DIR}/include
+< 	LIBPATH1 = ${ROOT_DIR}/lib
+< else 
+< # Compiled libraries under user ~flexpart, gfortran v5.4
+< 	ROOT_DIR = /homevip/flexpart/
+< 
+< 	F90	  = /usr/bin/gfortran
+< 	MPIF90    = /usr/bin/mpifort
+< 
+< 	INCPATH1  = ${ROOT_DIR}/gcc-5.4.0/include	
+< 	INCPATH2  = /usr/include
+< 	LIBPATH1 = ${ROOT_DIR}/gcc-5.4.0/lib
+< endif
+---
+> # Compiler and include paths information
+> F90 = /usr/bin/gfortran
+> MPIF90 = /usr/bin/mpifort
+> INCPATHS = -I${NETCDF_FORTRAN_ROOT}/include -I${ECCODES_ROOT}/include
+> LIBPATHS = -L${JASPER_ROOT}/lib -L${ECCODES_ROOT}/lib
+95c73
+< LIBS = -lgrib_api_f90 -lgrib_api -lm -ljasper $(NCOPT)
+---
+> LIBS = -lm -ljasper -leccodes -leccodes_f90 $(NCOPT)
+97c75
+< FFLAGS   = -I$(INCPATH1) -I$(INCPATH2) -O$(O_LEV) -g -cpp -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -fmessage-length=0 -flto=jobserver -O$(O_LEV) $(NCOPT) $(FUSER)  #-Warray-bounds -fcheck=all # -march=native
+---
+> FFLAGS   = $(INCPATHS) -O$(O_LEV) -g -cpp -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -fmessage-length=0 -flto=jobserver -O$(O_LEV) $(NCOPT) $(FUSER)  #-Warray-bounds -fcheck=all # -march=native
+99c77
+< DBGFLAGS = -I$(INCPATH1) -I$(INCPATH2) -O$(O_LEV_DBG) -g3 -ggdb3 -cpp -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -fmessage-length=0 -flto=jobserver -O$(O_LEV_DBG) $(NCOPT) -fbacktrace   -Wall  -fdump-core $(FUSER)  #  -ffpe-trap=invalid,overflow,denormal,underflow,zero  -Warray-bounds -fcheck=all
+---
+> DBGFLAGS = $(INCPATHS) -O$(O_LEV_DBG) -g3 -ggdb3 -cpp -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -fmessage-length=0 -flto=jobserver -O$(O_LEV_DBG) $(NCOPT) -fbacktrace   -Wall  -fdump-core $(FUSER)  #  -ffpe-trap=invalid,overflow,denormal,underflow,zero  -Warray-bounds -fcheck=all
+101,102c79,80
+< LDFLAGS  = $(FFLAGS) -L$(LIBPATH1) -Wl,-rpath,$(LIBPATH1) $(LIBS) #-L$(LIBPATH2)
+< LDDEBUG  = $(DBGFLAGS) -L$(LIBPATH1) $(LIBS) #-L$(LIBPATH2)
+---
+> LDFLAGS  = $(FFLAGS) $(LIBPATHS) -Wl,-rpath,$(LIBPATHS) $(LIBS)
+> LDDEBUG  = $(DBGFLAGS) $(LIBPATHS) $(LIBS)

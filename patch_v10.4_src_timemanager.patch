@@ -1,0 +1,5 @@
+96c96,97
+<   integer :: ix,jy,ldeltat,itage,nage,idummy
+---
+>   integer :: ix,jy,ldeltat,itage,nage
+>   integer(selected_int_kind(16)), dimension(nspec) :: idummy

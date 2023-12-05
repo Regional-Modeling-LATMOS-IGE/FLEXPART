@@ -1,0 +1,34 @@
+#---------------------------------------------------------#
+# Makefile to download and build FLEXPART v10.4 on SPIRIT #
+#---------------------------------------------------------#
+
+SHELL=/bin/bash
+FLEXPART_URL_DL=https://www.flexpart.eu/downloads
+FLEXPART_NAME=flexpart_v10.4
+FLEXPART_SHA256SUM=0f7a844129d7d790564f4099824b8ab027610afc90c25146cdd41e8e0718a9a9
+
+sources:
+	if [ ! -f ${FLEXPART_NAME}.tar ] ; then \
+		curl ${FLEXPART_URL_DL}/66 --output ${FLEXPART_NAME}.tar ; \
+	fi
+	if [ "$$(sha256sum ${FLEXPART_NAME}.tar | cut -d" " -f1)" = ${FLEXPART_SHA256SUM} ] ; then \
+		tar -xf ${FLEXPART_NAME}.tar ; \
+		mv ${FLEXPART_NAME}_3d7eebf ${FLEXPART_NAME} ; \
+		patch -b ${FLEXPART_NAME}/src/makefile ./patch_v10.4_src_makefile.patch ; \
+		patch -b ${FLEXPART_NAME}/src/timemanager.f90 ./patch_v10.4_src_timemanager.patch ; \
+        else \
+		echo "Checksum of downloaded file is incorrect. DANGER ! DO NOT PROCEED." ; \
+	fi
+
+flexpart-serial:
+	source environment_v10.4_serial.sh ; \
+	cd ${FLEXPART_NAME}/src ; \
+	make serial ncf=yes
+
+flexpart-clean:
+	cd ${FLEXPART_NAME}/src ; \
+	make clean
+
+flexpart-cleanall:
+	cd ${FLEXPART_NAME}/src ; \
+	make cleanall
