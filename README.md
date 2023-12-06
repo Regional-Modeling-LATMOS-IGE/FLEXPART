@@ -20,7 +20,7 @@
 # Prepare the meteorological data for running FLEXPART
 ## THIS NEEDS TO BE UPDATED WHEN FLEX_EXTRACT WORKS
 
-### note that the following problems with flex extract have been noted due to the fact that EMOSLIB is now retired.  Documented here: https://www.flexpart.eu/ticket/312
+Note that the following problems with flex extract have been noted due to the fact that EMOSLIB is now retired.  Documented here: https://www.flexpart.eu/ticket/312
 
 1. Get the flex_extract source code
 
