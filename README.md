@@ -30,6 +30,11 @@ With the public flex_extract and FLEXPART 10.4, we now get this issue with ERA5:
 git clone --single-branch --branch master https://www.flexpart.eu/gitmob/flex_extract
 ```
 
+trying with
+```bash
+git clone --single-branch --branch dev https://www.flexpart.eu/gitmob/flex_extract
+```
+
 2. Create a dedicated folder in your /data/ directory
 
 3. Make it work...
