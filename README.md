@@ -61,10 +61,11 @@ CONTROLFILE='CONTROL_EA5'
 ./setup_local.sh
 ```
 
-6. Get some ERA5 data for running FLEXPART
-Make sure you have a login and are setup to use the Copernicus Climate Data Store on Spirit.
-
+6. Setup to use the Copernicus Climate Data Store on Spirit.
 Register at: https://cds.climate.copernicus.eu/
+
+Setup the CDS API on Spirit by following these instructions: https://cds.climate.copernicus.eu/api-how-to
+
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
