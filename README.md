@@ -34,7 +34,12 @@ module load gcc/9.4.0
 module load eccodes/2.21.0-serial
 ```
 
-3. Modify the setup_local.sh file to read
+3. Ensure you are working in the folder where you have downloaded flex_extract, for example:
+```bash
+cd /home/thomas/FLEXPART/FLEXPART/flex_extract_dev
+```
+
+4. Modify the setup_local.sh file, these options for an instalation in the folder where you are working
 ```bash
 # THE USER HAS TO SPECIFY THESE PARAMETERS
 #
