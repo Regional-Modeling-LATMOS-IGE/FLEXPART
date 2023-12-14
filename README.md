@@ -87,6 +87,26 @@ For, exmaple
 ```bash
 cd ~/FLEXPART/FLEXPART/flex_extract_dev/Run
 ```
+Create a script to use the queue to extract data, such as
+```bash
+#!/bin/bash
+#SBATCH --job-name=Run_FP           # nom du job
+#SBATCH --partition=zen16                   # Nom d'une partition pour une exÃ©tion cpu
+#SBATCH --ntasks=1                          # nombre de taches
+#SBATCH --ntasks-per-node=1                 # nombre de taches MPI par noeud
+#SBATCH --mem=10GB                          # memory limit
+#SBATCH --time=04:00:00                     # temps d execution maximum demande (HH:MM:SS)
+#SBATCH --output=Flex_extract_%j.out       # nom du fichier de sortie
+#SBATCH --error=Flex_extract_%j.out        # nom du fichier d'erreur (ici en commun avec la sortie)
+
+
+module purge
+module load netcdf-fortran/4.5.3-serial
+module load jasper/2.0.32
+module load eccodes/2.21.0-serial
+~                                 
+./run_local_test.sh
+```
 
 
 # Run FLEXPART v10.4 on spirit (serial mode)
