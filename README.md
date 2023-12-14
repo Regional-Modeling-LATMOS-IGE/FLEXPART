@@ -82,6 +82,13 @@ Install the CDS API in your pangeo environment
 pip install cdsapi
 ```
 
+7. Go to the Run folder for flex_extract
+For, exmaple
+```bash
+cd ~/FLEXPART/FLEXPART/flex_extract_dev/Run
+```
+
+
 # Run FLEXPART v10.4 on spirit (serial mode)
 
 ### Prepare the run folder
