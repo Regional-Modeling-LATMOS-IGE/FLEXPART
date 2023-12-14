@@ -56,7 +56,10 @@ JOB_TEMPLATE=''
 CONTROLFILE='CONTROL_EA5'
 ```
 
-3. Make it work...
+4. Compile and configure using
+```bash
+./setup_local.sh
+```
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
