@@ -72,6 +72,16 @@ One way to do these steps is to operate within the pangeo-meso environment by lo
 module load pangeo-meso/2023.04.15
 ```
 
+Setup your CDS api key as instructed by creating this file with your key information
+```bash
+$HOME/.cdsapirc
+```
+
+Install the CDS API in your pangeo environment
+```bash
+pip install cdsapi
+```
+
 # Run FLEXPART v10.4 on spirit (serial mode)
 
 ### Prepare the run folder
