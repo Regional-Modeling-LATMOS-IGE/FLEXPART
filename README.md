@@ -108,7 +108,7 @@ module load eccodes/2.21.0-serial
 ./run_local.sh
 ```
 
-8. Modify run local to be for public ERA5 data, for the dates you need data, with the input and ouput directories (for example):
+8. Modify run_local.sh to be for public ERA5 data, for the dates you need data, with the input and ouput directories (for example):
 ```bash
 # AVAILABLE COMMANDLINE ARGUMENTS TO SET
 # 
@@ -133,6 +133,10 @@ REQUEST=2
 PUBLIC=1
 ```
 
+9. Launch your data extraction
+```bash
+sbatch launch_extract.sh
+```
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
