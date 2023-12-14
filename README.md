@@ -108,7 +108,7 @@ module load eccodes/2.21.0-serial
 ./run_local.sh
 ```
 
-8. Modify run local to be for public ERA5 data with an output directly of your choice, written to data, for example:
+8. Modify run local to be for public ERA5 data, for the dates you need data, with the input and ouput directories (for example):
 ```bash
 # AVAILABLE COMMANDLINE ARGUMENTS TO SET
 # 
