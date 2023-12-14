@@ -86,7 +86,7 @@ For, exmaple
 ```bash
 cd ~/FLEXPART/FLEXPART/flex_extract_dev/Run
 ```
-Create a script to use the queue to extract data called extract_data.ll
+Create a script to use the queue to extract data called extract_data.sh
 ```bash
 #!/bin/bash
 #SBATCH --job-name=Run_FP           # nom du job
@@ -103,6 +103,7 @@ module purge
 module load netcdf-fortran/4.5.3-serial
 module load jasper/2.0.32
 module load eccodes/2.21.0-serial
+module load pangeo-meso/2023.04.15
 ~                                 
 ./run_local.sh
 ```
@@ -134,7 +135,7 @@ PUBLIC=1
 
 9. Launch flex_extract via the queue using
 ```bash
-sbatch launch_extract.sh
+sbatch extract_data.sh
 ```
 
 # Run FLEXPART v10.4 on spirit (serial mode)
