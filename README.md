@@ -67,6 +67,10 @@ Register at: https://cds.climate.copernicus.eu/
 
 Setup the CDS API on Spirit by following these instructions: https://cds.climate.copernicus.eu/api-how-to
 
+One way to do these steps is to operate within the pangeo-meso environment by loading this module:
+```bash
+module load pangeo-meso/2023.04.15
+```
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
