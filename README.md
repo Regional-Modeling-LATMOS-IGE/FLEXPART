@@ -28,6 +28,12 @@ Get the flex_extract dev branch for use with FLEXPART 10.4 following the advice 
 git clone --single-branch --branch dev https://www.flexpart.eu/gitmob/flex_extract
 ```
 
+2. Load some modules to ensure we can compile
+```bash
+module load gcc/9.4.0
+module load eccodes/2.21.0-serial
+```
+
 2. Create a dedicated folder in your /data/ directory
 
 3. Make it work...
