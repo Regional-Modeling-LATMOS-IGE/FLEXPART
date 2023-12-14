@@ -18,19 +18,12 @@
 
 
 # Prepare the meteorological data for running FLEXPART
-## THIS NEEDS TO BE UPDATED WHEN FLEX_EXTRACT WORKS
-
 The following problems with flex_extract have been noted due to the fact that EMOSLIB is now retired.  Documented here: https://www.flexpart.eu/ticket/312
 
-With the public flex_extract and FLEXPART 10.4, we now get this issue with ERA5: https://www.flexpart.eu/ticket/297
 
 1. Get the flex_extract source code
+Get the flex_extract dev branch for use with FLEXPART 10.4 following the advice in: https://www.flexpart.eu/ticket/297
 
-```bash
-git clone --single-branch --branch master https://www.flexpart.eu/gitmob/flex_extract
-```
-
-trying with
 ```bash
 git clone --single-branch --branch dev https://www.flexpart.eu/gitmob/flex_extract
 ```
