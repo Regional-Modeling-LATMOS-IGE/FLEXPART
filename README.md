@@ -34,7 +34,22 @@ module load gcc/9.4.0
 module load eccodes/2.21.0-serial
 ```
 
-2. Create a dedicated folder in your /data/ directory
+3. Modify the setup_local.sh file to read
+```bash
+# THE USER HAS TO SPECIFY THESE PARAMETERS
+#
+export ECCODES_ROOT=/net/nfs/tools/u20/22.3/PrgEnv/gcc/linux-ubuntu20.04-zen2/eccodes/2.21.0-gcc-9.4.0-rdneibdekiizqpmifsvn3t3qymvsqa6k
+echo $ECCODES_ROOT
+TARGET='local'
+MAKEFILE='makefile_local_gfortran'
+ECUID=None
+ECGID=None
+GATEWAY=None
+DESTINATION=None
+INSTALLDIR=None
+JOB_TEMPLATE=''
+CONTROLFILE='CONTROL_EA5'
+```
 
 3. Make it work...
 
