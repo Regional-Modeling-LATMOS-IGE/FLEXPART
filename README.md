@@ -133,7 +133,7 @@ REQUEST=2
 PUBLIC=1
 ```
 
-9. Launch your data extraction
+9. Launch flex_extract via the queue using
 ```bash
 sbatch launch_extract.sh
 ```
