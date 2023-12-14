@@ -56,10 +56,15 @@ JOB_TEMPLATE=''
 CONTROLFILE='CONTROL_EA5'
 ```
 
-4. Compile and configure using
+5. Compile and configure using
 ```bash
 ./setup_local.sh
 ```
+
+6. Get some ERA5 data for running FLEXPART
+Make sure you have a login and are setup to use the Copernicus Climate Data Store on Spirit.
+
+Register at: https://cds.climate.copernicus.eu/
 
 # Run FLEXPART v10.4 on spirit (serial mode)
 
