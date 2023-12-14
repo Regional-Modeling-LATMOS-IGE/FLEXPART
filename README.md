@@ -105,7 +105,32 @@ module load netcdf-fortran/4.5.3-serial
 module load jasper/2.0.32
 module load eccodes/2.21.0-serial
 ~                                 
-./run_local_test.sh
+./run_local.sh
+```
+
+8. Modify run local to be for public ERA5 data with an output directly of your choice, written to data, for example:
+```bash
+# AVAILABLE COMMANDLINE ARGUMENTS TO SET
+# 
+# THE USER HAS TO SPECIFY THESE PARAMETERS:
+
+QUEUE=None
+START_DATE=20180809
+END_DATE=20180809
+DATE_CHUNK=None
+JOB_CHUNK=3
+BASETIME=None
+STEP=None
+LEVELIST=None
+AREA=None
+INPUTDIR='/data/thomas/FLEXPART-In/ERA5-dev'
+OUTPUTDIR='/data/thomas/FLEXPART-In/ERA5-dev'
+PP_ID=None
+JOB_TEMPLATE=None
+CONTROLFILE='CONTROL_EA5.global'
+DEBUG=0
+REQUEST=2
+PUBLIC=1
 ```
 
 
