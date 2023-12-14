@@ -87,7 +87,7 @@ For, exmaple
 ```bash
 cd ~/FLEXPART/FLEXPART/flex_extract_dev/Run
 ```
-Create a script to use the queue to extract data, such as
+Create a script to use the queue to extract data called extract_data.ll
 ```bash
 #!/bin/bash
 #SBATCH --job-name=Run_FP           # nom du job
