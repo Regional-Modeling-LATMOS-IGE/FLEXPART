@@ -27,10 +27,15 @@ Get the flex_extract dev branch for use with FLEXPART 10.4 following the advice 
 git clone --single-branch --branch dev https://www.flexpart.eu/gitmob/flex_extract
 ```
 
-2. Load some modules to ensure we can compile
+2. Load some modules to ensure we can compile and later run the script extract_data.sh (see step 7)
 ```bash
 module load gcc/9.4.0
 module load eccodes/2.21.0-serial
+```
+In your python environment, ensure you install Genshi
+```bash
+module load pangeo-meso/2023.04.15
+pip install Genshi
 ```
 
 3. Ensure you are working in the folder where you have downloaded flex_extract, for example:
